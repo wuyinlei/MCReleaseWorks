@@ -21,7 +21,6 @@ public class FoodValueItemViewProvider extends ItemViewProvider<UpLoadFoodMessag
     private Items mItems;
 
     private static boolean isAdd = false;
-    private static boolean isAdd_one = true;
 
     public FoodValueItemViewProvider() {
     }
@@ -48,9 +47,6 @@ public class FoodValueItemViewProvider extends ItemViewProvider<UpLoadFoodMessag
             holder.mValue.setText("");
         }
 
-        isAdd_one = !holder.mKey.hasFocus();
-
-
         holder.mKey.addTextChangedListener(new TextWatcher() {
 
 
@@ -67,9 +63,6 @@ public class FoodValueItemViewProvider extends ItemViewProvider<UpLoadFoodMessag
             public void afterTextChanged(Editable s) {
 
 
-                boolean focusable = holder.mKey.hasFocusable();
-
-
                 int indexOf = mItems.indexOf(upLoadFoodMessage);
 
                 int position = holder.getLayoutPosition();
@@ -83,8 +76,11 @@ public class FoodValueItemViewProvider extends ItemViewProvider<UpLoadFoodMessag
                             pos++;
                 }
 
+                pos = pos + 3 * (mode - 1);
 
                 isAdd = pos == position;
+
+                pos = 0;
 
                 if (isAdd)
 
@@ -102,27 +98,40 @@ public class FoodValueItemViewProvider extends ItemViewProvider<UpLoadFoodMessag
 
                                 upLoadFoodMessage.setKey(s.toString());
 
-                                mItems.add(indexOf, new UpLoadFoodMessage(1));
+                                mItems.add(indexOf+1, new UpLoadFoodMessage(1));
 
-                                mMultiTypeAdapter.notifyItemChanged(indexOf, 1);
+                                mMultiTypeAdapter.notifyDataSetChanged();
 
                                 break;
                             case UpLoadFoodMessage.ACCESSORIES:
                                 Toast.makeText(holder.itemView.getContext(), "我是辅料", Toast.LENGTH_SHORT).show();
 
-                                mItems.add(indexOf, new UpLoadFoodMessage(2));
+                                upLoadFoodMessage.setKey(s.toString());
+
+                                Toast.makeText(holder.itemView.getContext(), "indexOf:" + indexOf, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(holder.itemView.getContext(), "holder.getLayoutPosition():" + holder.getLayoutPosition(), Toast.LENGTH_SHORT).show();
+
+                                mItems.add(indexOf+1, new UpLoadFoodMessage(2));
+
+                                mMultiTypeAdapter.notifyDataSetChanged();
                                 break;
 
                             case UpLoadFoodMessage.SEASONING:
                                 Toast.makeText(holder.itemView.getContext(), "我是调料", Toast.LENGTH_SHORT).show();
+                                upLoadFoodMessage.setKey(s.toString());
 
-                                mItems.add(indexOf, new UpLoadFoodMessage(2));
+                                mItems.add(indexOf+1, new UpLoadFoodMessage(3));
+
+                                mMultiTypeAdapter.notifyDataSetChanged();
                                 break;
 
                             case UpLoadFoodMessage.METHOD:
                                 Toast.makeText(holder.itemView.getContext(), "我是做法", Toast.LENGTH_SHORT).show();
-                                mItems.add(indexOf, new UpLoadFoodMessage(2));
+                                upLoadFoodMessage.setKey(s.toString());
 
+                                mItems.add(indexOf+1, new UpLoadFoodMessage(4));
+
+                                mMultiTypeAdapter.notifyDataSetChanged();
                                 break;
                         }
                     }

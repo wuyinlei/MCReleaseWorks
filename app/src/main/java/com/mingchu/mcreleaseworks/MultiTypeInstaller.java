@@ -18,9 +18,6 @@ package com.mingchu.mcreleaseworks;
 
 import me.drakeet.multitype.GlobalMultiTypePool;
 
-/**
- * @author drakeet
- */
 class MultiTypeInstaller {
 
     static void start() {

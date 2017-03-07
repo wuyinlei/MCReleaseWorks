@@ -10,9 +10,6 @@ import android.widget.TextView;
 
 import me.drakeet.multitype.ItemViewProvider;
 
-/**
- * Created by wuyinlei on 2017/3/7.
- */
 
 public class CategoryItemViewProvider extends ItemViewProvider<Category, CategoryItemViewProvider.ViewHolder> {
 

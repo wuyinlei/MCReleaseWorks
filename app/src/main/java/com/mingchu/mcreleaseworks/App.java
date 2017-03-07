@@ -18,9 +18,6 @@ package com.mingchu.mcreleaseworks;
 
 import android.app.Application;
 
-/**
- * @author drakeet
- */
 public class App extends Application {
 
     @Override public void onCreate() {
