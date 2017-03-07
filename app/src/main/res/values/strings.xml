@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MCReleaseWorks</string>
+    <string name="back">返回</string>
+    <string name="regist_yes">存草稿</string>
+    <string name="upload_next2">发布</string>
+    <string name="upload2_write_name">填写用料</string>
+    <string name="upload2_write_value">用量</string>
+</resources>
