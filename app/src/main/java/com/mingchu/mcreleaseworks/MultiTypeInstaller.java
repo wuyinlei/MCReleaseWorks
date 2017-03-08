@@ -22,6 +22,9 @@ class MultiTypeInstaller {
 
     static void start() {
 //        GlobalMultiTypePool.register(TextItem.class, new TextItemViewProvider());
+        GlobalMultiTypePool.register(UpLoadFoodMessage.class,new FoodValueItemViewProviderThree());
+        GlobalMultiTypePool.register(UpLoadFoodMessage.class,new FoodValueItemViewProviderTwo());
+        GlobalMultiTypePool.register(UpLoadFoodMessage.class,new FoodValueItemViewProviderOne());
         GlobalMultiTypePool.register(UpLoadFoodMessage.class, new FoodValueItemViewProvider());
         GlobalMultiTypePool.register(Category.class, new CategoryItemViewProvider());
     }

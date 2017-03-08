@@ -3,13 +3,13 @@ package com.mingchu.mcreleaseworks;
 import java.io.Serializable;
 
 
-public class UpLoadFoodMessage implements Serializable {
+public class UpLoadFoodMessageOne implements Serializable {
 
     private String key;
     private String value;
 
 
-    public UpLoadFoodMessage() {
+    public UpLoadFoodMessageOne() {
     }
 
     public String getKey() {

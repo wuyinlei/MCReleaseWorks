@@ -3,13 +3,14 @@ package com.mingchu.mcreleaseworks;
 import java.io.Serializable;
 
 
-public class UpLoadFoodMessage implements Serializable {
+public class UpLoadFoodMessageThree implements Serializable {
 
     private String key;
     private String value;
 
 
-    public UpLoadFoodMessage() {
+    public UpLoadFoodMessageThree() {
+
     }
 
     public String getKey() {
@@ -27,5 +28,4 @@ public class UpLoadFoodMessage implements Serializable {
     public void setValue(String value) {
         this.value = value;
     }
-
 }
